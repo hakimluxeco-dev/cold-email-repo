@@ -1,5 +1,5 @@
 {
-    "version": "2.0.3",
-    "downloadUrl": "https://github.com/hakimluxeco-dev/cold-email-repo/releases/download/v2.0.3/ColdEmailReachSetup.exe",
-    "releaseNotes": "V2.0.3 - UI Polish: Fixed duplicate window controls and Start New Campaign button."
+    "version": "2.0.4",
+    "downloadUrl": "https://github.com/hakimluxeco-dev/cold-email-repo/releases/download/v2.0.4/ColdEmailReachSetup.exe",
+    "releaseNotes": "V2.0.4 - Import Fix: Rewrote markdown parser with dynamic column detection."
 }
