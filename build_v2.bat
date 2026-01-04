@@ -1,5 +1,13 @@
-
 cd "ColdEmailApp/frontend"
+
+echo Copying embedded python to frontend build context...
+if exist python_embedded rmdir /s /q python_embedded
+xcopy /E /I /Y "..\python_embedded" "python_embedded"
+
+echo Copying backend to frontend build context...
+if exist backend rmdir /s /q backend
+xcopy /E /I /Y "..\backend" "backend"
+
 call npm run build
 call npx electron-packager . "ColdEmailReach" --platform=win32 --arch=x64 --out=packaged_app --overwrite
 cd ../..

@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+aiosqlite
+python-multipart
+python-dotenv
+secure-smtplib
+imap-tools
+

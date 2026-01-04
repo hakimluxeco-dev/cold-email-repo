@@ -2,7 +2,6 @@ node_modules/
 dist/
 build/
 packaged_app/
-python_embedded/
 __pycache__/
 *.pyc
 .env

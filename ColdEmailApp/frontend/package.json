@@ -48,13 +48,15 @@
   "build": {
     "appId": "com.maisolutions.coldemail",
     "productName": "Mai Solutions Cold Email Reach",
+    "asar": false,
     "files": [
       "dist/**/*",
-      "electron.cjs"
+      "electron.cjs",
+      "backend/**/*"
     ],
     "extraResources": [
       {
-        "from": "../python_embedded",
+        "from": "python_embedded",
         "to": "python_embedded",
         "filter": [
           "**/*"

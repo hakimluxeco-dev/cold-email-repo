@@ -154,32 +154,57 @@ const getScriptPath = () => {
 
 const createPythonProcess = () => {
     if (!app.isPackaged) {
-        // Development: run python source with system Python
+        // Development
         const script = path.join(__dirname, '..', 'backend', 'main.py');
         console.log(`[DEV] Starting Python from: ${script}`);
         pythonProcess = spawn('python', [script], { detached: false });
     } else {
-        // Production: use embedded Python
-        const pythonExe = path.join(process.resourcesPath, 'python_embedded', 'python.exe');
-        const backendScript = path.join(process.resourcesPath, 'backend', 'main.py');
+        // Production
+        const resources = process.resourcesPath;
+        const appDir = __dirname;
 
-        console.log(`[PROD] Python exe: ${pythonExe}`);
-        console.log(`[PROD] Backend script: ${backendScript}`);
+        console.log(`[PROD] Resources Path: ${resources}`);
+        console.log(`[PROD] App Dir: ${appDir}`);
 
-        if (!require('fs').existsSync(pythonExe)) {
-            console.error(`Python executable not found at: ${pythonExe}`);
+        // Define potential paths for Python
+        const pythonPaths = [
+            path.join(resources, 'python_embedded', 'python.exe'),         // ExtraResource
+            path.join(appDir, 'python_embedded', 'python.exe'),            // Bundled (No Asar)
+            path.join(resources, 'app', 'python_embedded', 'python.exe')   // Bundled (Explicit)
+        ];
+
+        // Define potential paths for Backend
+        const backendPaths = [
+            path.join(resources, 'backend', 'main.py'),        // ExtraResource
+            path.join(appDir, 'backend', 'main.py'),           // Bundled
+            path.join(resources, 'app', 'backend', 'main.py')  // Bundled (Explicit)
+        ];
+
+        let pythonExe = pythonPaths.find(p => fs.existsSync(p));
+        let backendScript = backendPaths.find(p => fs.existsSync(p));
+
+        console.log(`[PROD] Found Python: ${pythonExe}`);
+        console.log(`[PROD] Found Backend: ${backendScript}`);
+
+        if (!pythonExe) {
+            console.error(`ERROR: Python executable not found in any checked path.`);
+            console.error(`Checked: ${JSON.stringify(pythonPaths)}`);
             return;
         }
 
-        if (!require('fs').existsSync(backendScript)) {
-            console.error(`Backend script not found at: ${backendScript}`);
+        if (!backendScript) {
+            console.error(`ERROR: Backend script not found in any checked path.`);
+            console.error(`Checked: ${JSON.stringify(backendPaths)}`);
             return;
         }
+
+        const backendDir = path.dirname(backendScript);
+        console.log(`[PROD] CWD: ${backendDir}`);
 
         pythonProcess = spawn(pythonExe, [backendScript], {
             detached: false,
             windowsHide: true,
-            cwd: path.join(process.resourcesPath, 'backend')
+            cwd: backendDir
         });
     }
 

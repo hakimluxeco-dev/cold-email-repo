@@ -1,5 +1,5 @@
 {
-    "version": "2.1.2",
-    "downloadUrl": "https://github.com/hakimluxeco-dev/cold-email-repo/releases/download/v2.1.2/ColdEmailReachSetup.exe",
-    "releaseNotes": "v2.1.2 - Standalone & Bulk Delete: No Python installation required! Bulk Delete leads. Import duplicate prevention and network error fixes."
+    "version": "2.1.3",
+    "downloadUrl": "https://github.com/hakimluxeco-dev/cold-email-repo/releases/download/v2.1.3/ColdEmailReachSetup.exe",
+    "releaseNotes": "v2.1.3 - Bundled Backend & Fixed Import: Fixed 'Python executable not found' by bundling backend files directly into the app. Includes all v2.1.2 features."
 }
