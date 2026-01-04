@@ -1,0 +1,1 @@
+print("PyInstaller is working!")

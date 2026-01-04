@@ -1,0 +1,15 @@
+node_modules/
+dist/
+build/
+packaged_app/
+python_embedded/
+__pycache__/
+*.pyc
+.env
+*.log
+app_payload.zip
+uninstall.exe
+*.spec
+ColdEmailReach-win32-x64/
+_archived_app/
+ColdEmailApp_backup_old/

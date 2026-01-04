@@ -1,0 +1,94 @@
+{
+  "name": "cold-email-reach",
+  "private": true,
+  "version": "2.1.2",
+  "main": "electron.cjs",
+  "author": "Mai Solutions",
+  "description": "Desktop Dashboard for Cold Email Outreach",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "electron:dev": "concurrently -k \"cross-env BROWSER=none npm run dev\" \"wait-on http://localhost:5173 && electron electron.cjs\"",
+    "electron:build": "npm run build && electron-builder"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "axios": "^1.13.2",
+    "clsx": "^2.1.1",
+    "electron-updater": "^6.6.2",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.11.0",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "autoprefixer": "^10.4.23",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8",
+    "electron-rebuild": "^3.2.9",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "vite": "^7.2.4",
+    "wait-on": "^8.0.2"
+  },
+  "build": {
+    "appId": "com.maisolutions.coldemail",
+    "productName": "Mai Solutions Cold Email Reach",
+    "files": [
+      "dist/**/*",
+      "electron.cjs"
+    ],
+    "extraResources": [
+      {
+        "from": "../python_embedded",
+        "to": "python_embedded",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "../backend",
+        "to": "backend",
+        "filter": [
+          "**/*",
+          "!**/__pycache__/**",
+          "!**/venv/**",
+          "!**/dist/**",
+          "!**/build/**",
+          "!**/*.spec"
+        ]
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "requestedExecutionLevel": "asInvoker",
+      "verifyUpdateCodeSignature": false,
+      "forceCodeSigning": false,
+      "sign": null
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "marcio-user",
+      "repo": "cold-email-system"
+    }
+  }
+}

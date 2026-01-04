@@ -1,0 +1,29 @@
+# UTF-8
+VSVersionInfo(
+  ffi=FixedFileInfo(
+    filevers=(2, 0, 7, 0),
+    prodvers=(2, 0, 7, 0),
+    mask=0x3f,
+    flags=0x0,
+    OS=0x40004,
+    fileType=0x1,
+    subtype=0x0,
+    date=(0, 0)
+    ),
+  kids=[
+    StringFileInfo(
+      [
+      StringTable(
+        u'040904B0',
+        [StringStruct(u'CompanyName', u'MAI Solutions'),
+        StringStruct(u'FileDescription', u'Cold Email Reach Uninstaller'),
+        StringStruct(u'FileVersion', u'2.0.8'),
+        StringStruct(u'InternalName', u'Uninstall'),
+        StringStruct(u'LegalCopyright', u'Copyright (c) 2026 MAI Solutions'),
+        StringStruct(u'OriginalFilename', u'uninstall.exe'),
+        StringStruct(u'ProductName', u'Cold Email Reach'),
+        StringStruct(u'ProductVersion', u'2.0.8')])
+      ]), 
+    VarFileInfo([VarStruct(u'Translation', [1033, 1200])])
+  ]
+)
