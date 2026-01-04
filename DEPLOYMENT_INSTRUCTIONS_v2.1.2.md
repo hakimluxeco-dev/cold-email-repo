@@ -12,6 +12,11 @@ Since the previous git history seems lost/disconnected, we will initialize a new
 4.  **Push**: `git push -u origin master --force` (Force might be needed if overwriting old history, or we just push to a new branch).
 
 ## 2. GitHub Release
+> [!CRITICAL]
+> **MANDATORY RELEASE DETAILS**
+> You **MUST** fill in the following details correctly. Failure to do so will confuse users or break the update path.
+> An auto-generated link may be provided by the system, or fill them manually:
+
 1.  **Tag**: `v2.1.2`
 2.  **Title**: `v2.1.2 - Standalone & Bulk Delete`
 3.  **Description**:
