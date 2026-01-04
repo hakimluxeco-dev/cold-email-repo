@@ -1,5 +1,5 @@
 {
-    "version": "2.1.1",
-    "downloadUrl": "https://github.com/hakimluxeco-dev/cold-email-repo/releases/download/v2.1.1/ColdEmailReachSetup.exe",
-    "releaseNotes": "V2.1.1 - Stability & Persistence: Fixed Settings Save issue and added logic to preserve user settings across updates."
+    "version": "2.1.2",
+    "downloadUrl": "https://github.com/hakimluxeco-dev/cold-email-repo/releases/download/v2.1.2/ColdEmailReachSetup.exe",
+    "releaseNotes": "V2.1.2 - High Priority Fix: Resolved an issue where leads were not imported if Email was the first column."
 }
