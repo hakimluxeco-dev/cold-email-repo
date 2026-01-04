@@ -1,5 +1,5 @@
 {
-    "version": "2.1.0",
-    "downloadUrl": "https://github.com/hakimluxeco-dev/cold-email-repo/releases/download/v2.1.0/ColdEmailReachSetup.exe",
-    "releaseNotes": "V2.1.0 - Usability Fixes: Settings Save Fix & Internal Upgrades."
+    "version": "2.1.1",
+    "downloadUrl": "https://github.com/hakimluxeco-dev/cold-email-repo/releases/download/v2.1.1/ColdEmailReachSetup.exe",
+    "releaseNotes": "V2.1.1 - Stability & Persistence: Fixed Settings Save issue and added logic to preserve user settings across updates."
 }
